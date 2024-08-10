@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<title>{{ .Title }}</title>
+<meta name="description" content="{{ .Description }}">
+<!-- twitter card -->
+{{ if $.Param "image" }}
+    <meta name="image" content="{{ $.Param "image" }}">
+{{ end }}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ .Description }}">
+<meta name="twitter:site" content="@{{ $.Site.Params.Author.twitter }}">
+<meta name="twitter:creator" content="@{{ $.Site.Params.Author.twitter }}">
+{{ if $.Param "image" }}
+    <meta name="twitter:image:src" content="{{ $.Param "image" }}">
+{{ end }}
+<!-- opengraph -->
+<meta property="og:site_name" content="{{ .Site.Title }}"/>
+<meta property="og:title" content="{{ .Title }}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="{{ .Permalink }}"/>
+<meta property="og:description" content="{{ .Description }}"/>
+{{ if $.Param "image" }}
+    <meta name="og:image" content="{{ .Site.BaseURL }}{{ $.Param "image" }}">
+{{ end }}
+<meta name="article:author" content="https://twitter.com/{{ $.Site.Params.Author.twitter }}">
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">

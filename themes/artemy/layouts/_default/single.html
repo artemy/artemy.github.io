@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+    <div>
+        <h2 {{ if .Draft }}class="draft"{{ end }}>{{ .Title }}</h2>
+        {{ if eq .Type "posts" }}
+            <p class="date">{{ partial "postdate.html" . }}</p>
+        {{ end }}
+        {{ .Content }}
+    </div>
+
+{{ end }}

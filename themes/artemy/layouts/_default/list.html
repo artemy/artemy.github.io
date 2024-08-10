@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+    <div class="posts">
+        <h2>{{ T "posts" }}</h2>
+        {{ $pages := where site.RegularPages "Type" "posts" }}
+        {{ $paginator := .Paginate $pages.ByDate.Reverse }}
+
+        {{ range $paginator.Pages }}
+            <p class="post">
+                <a href="{{ .RelPermalink }}" {{ if .Draft }}class="draft"{{ end }}>{{ .Title }}</a>
+                <span class="date">{{ partial "postdate.html" . }}</span>
+            </p>
+        {{ end }}
+        {{ if gt $paginator.TotalNumberOfElements 1 }}
+            {{ partial "pagination.html" . }}
+        {{ end }}
+        {{ if eq (len $pages) 0 }}
+            {{ T "no_posts" }}
+        {{ end }}
+    </div>
+
+
+{{ end }}

@@ -1,0 +1,19 @@
+<ul>
+    <li><a href="{{ .Site.BaseURL | relLangURL }}">{{ $.Site.Title }}</a></li>
+    <div class="right-items">
+        {{ range $.Site.Home.AllTranslations }}
+            <li><a href="{{ .RelPermalink }}">{{ .Language.Params.Flag }}</a></li>
+        {{ end }}
+        {{- range site.Menus.main }}
+            <li><a href="{{ .URL }}">
+                {{ .Name }}
+                {{- with .Page }}
+                    {{- with .Params.version -}}
+                        ({{ . }})
+                    {{- end }}
+                {{- end }}
+            </a></li>
+        {{- end }}
+    </div>
+
+</ul>

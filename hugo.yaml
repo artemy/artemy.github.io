@@ -1,0 +1,43 @@
+baseurl: "https://artemy.github.io/"
+title: "website name"
+
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: true
+
+enableEmoji: true
+
+theme: "artemy"
+
+languages:
+  en:
+    disabled: false
+    languageCode: en
+    languageDirection: ltr
+    languageName: English
+    weight: 1
+    params:
+      flag: 🇬🇧
+  ru:
+    disabled: false
+    languageCode: ru
+    languageDirection: ltr
+    languageName: Russian
+    weight: 2
+    params:
+      flag: 🇷🇺
+
+params:
+  favicon: "favicon.ico"
+  dateFormat: "January 2, 2006"
+  commit: false
+  rss: true
+  comments: true
+  author:
+    name: "Artem"
+    twitter: "artemy_m"
+
+enableRobotsTXT: true
+
+pagination:
+  pagerSize: 1
+  path: page
